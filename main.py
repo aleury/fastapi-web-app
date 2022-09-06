@@ -10,7 +10,7 @@ app = fastapi.FastAPI()
 
 def main():
     configure()
-    uvicorn.run(app, host='127.0.0.1', port=8000)
+    uvicorn.run('main:app', host='127.0.0.1', port=8000, reload=True, reload_includes="*.pt")
 
 
 def configure():
