@@ -7,8 +7,9 @@ def release_count() -> int:
 
 
 def latest_packages(limit: int = 5) -> list:
-    return [
+    packages = [
         {"id": "fastapi", "summary": "A great web framework."},
         {"id": "uvicorn", "summary": "Your favorite ASGI server."},
         {"id": "httpx", "summary": "Requests for the async world."},
     ]
+    return packages[:limit]
