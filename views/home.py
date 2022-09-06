@@ -3,6 +3,7 @@ from fastapi.requests import Request
 from fastapi_chameleon import template
 
 from viewmodels import home
+from viewmodels import shared
 
 router = fastapi.APIRouter()
 
@@ -16,5 +17,6 @@ def index(request: Request):
 
 @router.get("/about")
 @template("home/about.pt")
-def about():
-    return {}
+def about(request: Request):
+    vm = shared.ViewModelBase(request)
+    return vm.to_dict()
